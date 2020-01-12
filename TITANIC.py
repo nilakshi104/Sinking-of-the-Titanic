@@ -169,9 +169,7 @@ def model(X_train,Y_train,X_test,num_iterations,learning_rate):
     print('Final accuracy on training set :',accuracy) 
     return acc,costs,Y_prediction_test
 
-
 acc,costs,Y_prediction_test=model(X_train.T, Y_train.T,X_test ,num_iterations = 10000, learning_rate = 0.005)
-
 
 plt.subplot(1,2,1)
 plt.plot(costs,'r')
@@ -181,11 +179,9 @@ plt.subplot(1,2,2)
 plt.plot(acc,'b')
 plt.xlabel('Number of iterations')
 plt.title('Training accuracy')
-# plt.legend()
-# plt.ylim((0,1))
-# plt.xlim((100,1000))
-# plt.savefig('sgl.png')
 plt.show()
+
+#for submission to kaggle
 Y_prediction_test=np.squeeze(Y_prediction_test)
 Y_prediction_test=Y_prediction_test.astype('int32')
 submission=pd.DataFrame({'PassengerId':X_testset_passengerid,'Survived':Y_prediction_test})
