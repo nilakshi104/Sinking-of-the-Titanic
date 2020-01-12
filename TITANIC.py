@@ -181,7 +181,7 @@ plt.xlabel('Number of iterations')
 plt.title('Training accuracy')
 plt.show()
 
-#for submission to kaggle
+#for submission of kaggle
 Y_prediction_test=np.squeeze(Y_prediction_test)
 Y_prediction_test=Y_prediction_test.astype('int32')
 submission=pd.DataFrame({'PassengerId':X_testset_passengerid,'Survived':Y_prediction_test})
